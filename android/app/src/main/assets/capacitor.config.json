@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "cs-iv5-cap",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
