@@ -18,7 +18,7 @@ export class VaultService {
     };
 
     const secureStorageVaultConfig: IdentityVaultConfig = {
-      key: `com.${this.config.environment}.identity_ss.${this.config.clientCode}`,
+      key: `com.ss2.vault`, //`com.${this.config.environment}.identity_ss.${this.config.clientCode}`,
       type: VaultType.SecureStorage,
       deviceSecurityType: DeviceSecurityType.None
     };
@@ -33,6 +33,13 @@ export class VaultService {
 
   async hide() {
     await Device.setHideScreenOnBackground(true);
+  }
+
+  public async store() {
+    console.log('will store');
+    this.secStorageVault.setValue('somedata', 'blar');
+    await this.secStorageVault.lock();
+    console.log('stored');
   }
 
 }
